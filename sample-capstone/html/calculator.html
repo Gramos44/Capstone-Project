@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Materials Calculator</title>
+    <style>
+      body {
+        background-color: #DCD1CB;
+        font-family: Arial, sans-serif;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #54463F;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: whitesmoke;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #54463F;
+      }
+      
+      input[type="number"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 16px;
+      }
+      
+      input[type="button"] {
+        background-color: #54463F;
+        color: #fff;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      
+      input[type="button"]:hover {
+        background-color: #766258;
+      }
+      
+      textarea {
+        width: 100%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 16px;
+        resize: none;
+      }
+      
+      #output {
+        height: 80px;
+      }
+
+       .boxed {
+          border: 5px solid #54463F;
+          padding-bottom: 10px;
+        }
+
+          .mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: firebrick;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #766258;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: #433832;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.active {
+  background-color: #54463F;
+  color: white;
+}
+
+      #myFooter {
+  background-color: #38444d;
+}
+#footHeader {
+  font-size: 30px;
+  color: white;
+  text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#766258;
+}
+    li {
+  float: left;
+  width:14%; /* approximate equal length of each category */
+  text-align: center;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #A88C7D;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #D3D3D3;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}   
+.centeralign {
+  text-align: center;
+}
+
+p {
+  padding-left: 50pt;
+  padding-right: 50pt;
+  padding-top: 20pt;
+  text-indent: 20px;
+  text-align:left;
+  line-height: 1.5;
+}
+    
+.thumb {
+    max-height: 171px;
+    border: solid 6px rgba(5, 5, 5, 0.8);
+}
+
+.lightbox {
+    position: fixed;
+    z-index: 999;
+    height: 0;
+    width: 0;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2%;
+    opacity: 0;
+}
+
+.lightbox:target {
+    /** Remove default browser outline */
+    outline: none;
+
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    
+}
+
+.lightbox:target img {
+    border: solid 17px rgba(77, 77, 77, 0.8);
+    opacity: 1;
+    webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.light-btn {
+    color: #fafafa;
+    background-color: #333;
+    border: solid 3px #777;
+    padding: 5px 15px;
+    border-radius: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    position: absolute;
+    top: 45%;
+    z-index: 99;
+}
+
+.light-btn:hover {
+    background-color: #111;
+}
+
+.btn-prev {
+    left: 7%;
+}
+
+.btn-next {
+    right: 7%;
+}
+
+.btn-close {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    color: #fafafa;
+    background-color: #92001d;
+    border: solid 5px #ef4036;
+    padding: 10px 15px;
+    border-radius: 1px;
+    text-decoration: none;
+}
+
+.btn-close:hover {
+    background-color: #740404;
+}
+      .fa:hover {
+      opacity: 0.9;
+    }
+    .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+    </style>
+  </head>
+  <body>
+    <body style="background-color:#DCD1CB ;">
+  <div class="topnav">
+  <a href="../html/calculator.html" class="active">Materials Calculator</a>
+  <div id="myLinks">
+    <a href="https://test-for-capstone.elohall01.repl.co/sample-capstone/">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Our Products</a>
+    <a href="estimate.html">Estimating Tools</a>
+    <a href="schedule.html">Schedule Appointment</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+    <h1>Materials Calculator</h1>
+    <form>
+      <label for="width">Width (ft):</label>
+      <input type="number" id="width" name="width">
+
+      <label for="length">Length (ft):</label>
+      <input type="number" id="length" name="length">
+
+      <label for="depth">Depth (inches):</label>
+      <input type="number" id="depth" name="depth">
+
+      <input type="button" value="Calculate" onclick="calculate()">
+
+      <label for="output">Output:</label>
+      <textarea id="output" readonly></textarea>
+    </form>
+  <div class="boxed">
+    <h3 style="margin-left: 20px;"> How to Use the Materials Calculator</h3>
+    <p style="margin-left: 40px;"><b>Width</b>: First, you need to measure the width of your project's coverage area. This calculation will require that your measurements are in feet (ft). After this, proceed to insert the number in the corresponding box.</p>
+    <p style="margin-left: 40px;"><b>Length</b>: Second, you need to measure the length of your project's coverage area. This calculation will require that your measurements are also in feet (ft). After you have completed the measuring, proceed to insert the number into the corresponding box.</p>
+    <p style="margin-left: 40px;"><b>Depth</b>: Lastly, you need to measure the depth of your project's coverage area. This calculation will require that your measurements are in inches. Then, proceed to insert the number into the corresponding box and hit "Calculate". </p>
+  </div>
+
+    <script>
+      function calculate() {
+        // Get the values from the input fields
+        const width = document.getElementById("width").value;
+        const length = document.getElementById("length").value;
+        const depth = document.getElementById("depth").value;
+
+        // Convert depth to feet
+        const depth_feet = depth / 12;
+
+        // Calculate the total cubic feet
+         const total_cubic_feet = width * length * depth_feet / 27;
+
+        // Display the output
+        const output = document.getElementById("output");
+        output.value = "You need " + total_cubic_feet + " cubic feet of material.";
+      }
+    </script>
+      <footer id = "myFooter"></footer>
+    <footer class="page-footer">
+      <div class="container">
+        <h2 style = "padding-left: 20px; background-color: #DCD1CB;"> Other Links</h2>
+            <ul>
+              <li><a class="grey-text text-lighten-6" href="https://www.facebook.com/profile.php?id=100057816692899">Follow us on Facebook</a> </li>
+            <li><a href="https://www.facebook.com/profile.php?id=100057816692899" class="fa fa-facebook"></a></li>
+            
+            
+            </ul>
+          </div>
+        </footer>
+  </body>
+</html>

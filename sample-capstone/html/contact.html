@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us </title>
+  <link rel="stylesheet" href="sample-capstone/css/contact.css">
+</head>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: firebrick;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #766258;
+    position: relative;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    background: #433832;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: lightgray;
+    color: black;
+  }
+
+  .active {
+    background-color: #54463F;
+    color: white;
+  }
+
+  #myFooter {
+    background-color: #38444d;
+  }
+
+  #footHeader {
+    font-size: 30%;
+    color: whitesmoke;
+    text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #766258;
+  }
+
+  li {
+    float: left;
+    width: 14%;
+    /* approximate equal length of each category */
+    text-align: center;
+  }
+
+  li a,
+  .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: #A88C7D;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  
+  .fa:hover {
+    opacity: 0.9;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+</style>
+
+<body style="background-color:#DCD1CB ;">
+  <div class="topnav">
+    <a href="contact.html" class="active">Contact Us</a>
+    <div id="myLinks">
+      <a href="https://test-for-capstone.elohall01.repl.co/sample-capstone/">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="estimate.html">Estimating Tools</a>
+      <a href="schedule.html">Schedule Appointment</a>
+      <a href="products.html">Our Products</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+
+  <body>
+    <section>
+      <div class="container">
+        <h2 style="text-align:center;">Contact Us</h2>
+        <br>
+        <h6>The fields marked with * are required.</h6>
+        <!--<form action="https://formspree.io/f/mnqylpjj" Guy's formspree link -->
+        <form action="https://formspree.io/f/xrgvrjqk" id="test-form" method="POST">
+          <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName">
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number*</label>
+            <input type="text" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="reason"> Reason for Contact:</label>
+            <select name="reason" id="reason" style="width:60%; justify-content: center;">
+              <option value="dummy">Select</option>
+              <option value="general">General Inquiry</option>
+              <option value="estimate">Future Job Inquiry</option>
+              <option value="bobcat work">Gravel Hauling/ Driveway Work</option>
+              <option value="dirt work">Dirt Work/ Corrective Drainage</option>
+              <option value="materials">Product or Materials Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message*</label>
+            <textarea name="message" id="message" rows="10" maxlength="200"></textarea>
+          </div>
+
+          <button type="submit" id="test-form-submit">Submit</button>
+        </form>
+      </div>
+      <div id="status"></div>
+    </section>
+    <script src="sample-capstone/js/contact.js"></script>
+    <h4 style="text-align:center;"> Please allow us 24-48 hours to respond back to your messages. Thank you!</h4>
+
+    <footer id="myFooter"></footer>
+    <footer class="page-footer" style="padding-top: 100px;">
+      <div class="container">
+        <h2 style="padding-left: auto; background-color: #DCD1CB;"> Other Links</h2>
+        <ul>
+          <li><a class="grey-text text-lighten-6" href="https://www.facebook.com/profile.php?id=100057816692899">Follow
+              us on Facebook</a> </li>
+          <li><a href="https://www.facebook.com/profile.php?id=100057816692899" class="fa fa-facebook"></a></li>
+
+
+        </ul>
+      </div>
+    </footer>
+  </body>
+
+</html>

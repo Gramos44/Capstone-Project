@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule Appointment</title>
+  <script src="FAQ.js"> </script>
+</head>
+<style>
+  body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+  button {
+    background-color: #B9A397;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  button:hover {
+    background-color: lightgray;
+    
+  }
+
+  /*  CSS to center the button */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+
+  .container-top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  div.info {
+    background-color: #DCD1CB;
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 901px) {
+    div.info {
+      font_size: 35px;
+      font-stretch: expanded;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    div.info {
+      font-size: 30px;
+      \
+ font-stretch: expanded;
+    }
+  }
+
+  .flex-parent-element {
+    display: flex;
+    width: 80%;
+  }
+
+  .flex-child-element {
+    flex: 1;
+    border: 3px solid #433832;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .flex-child-element:first-child {
+    text-align: center;
+    margin-block: 10px;
+    margin-left: 300px;
+    font-size: 18px;
+    margin: 20px;
+  }
+
+  .mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: firebrick;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #766258;
+    position: relative;
+  }
+
+  .topnav #myLinks {
+    display: none;
+  }
+
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+
+  .topnav a.icon {
+    background: #433832;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav a:hover {
+    background-color: lightgray;
+    color: black;
+  }
+
+  .active {
+    background-color: #54463F;
+    color: white;
+  }
+
+  .layout {
+    width: 600px;
+    margin: auto;
+  }
+
+  .accordion {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #B9A397;
+    border-radius: 10px;
+  }
+
+  .accordion__question p {
+    margin: 5px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+
+  .accordion__answer p {
+    margin: 5px;
+    padding: 10px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background: rgb(82, 170, 122);
+    border-radius: 10px;
+  }
+
+  .accordion:hover {
+    cursor: pointer;
+  }
+
+  .accordion__answer {
+    display: none;
+  }
+
+  .accordion.active .accordion__answer {
+    display: block;
+  }
+  #myFooter {
+  background-color: #38444d;
+}
+#footHeader {
+  font-size: 30px;
+  color: white;
+  text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#766258;
+}
+    li {
+  float: left;
+  width:14%; /* approximate equal length of each category */
+  text-align: center;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #A88C7D;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #D3D3D3;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}   
+.centeralign {
+  text-align: center;
+}
+
+p {
+  padding-left: 50pt;
+  padding-right: 50pt;
+  padding-top: 20pt;
+  text-indent: 20px;
+  text-align:left;
+  line-height: 1.5;
+}
+    
+.thumb {
+    max-height: 171px;
+    border: solid 6px rgba(5, 5, 5, 0.8);
+}
+
+.lightbox {
+    position: fixed;
+    z-index: 999;
+    height: 0;
+    width: 0;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2%;
+    opacity: 0;
+}
+
+.lightbox:target {
+    /** Remove default browser outline */
+    outline: none;
+
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    
+}
+
+.lightbox:target img {
+    border: solid 17px rgba(77, 77, 77, 0.8);
+    opacity: 1;
+    webkit-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.light-btn {
+    color: #fafafa;
+    background-color: #333;
+    border: solid 3px #777;
+    padding: 5px 15px;
+    border-radius: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    position: absolute;
+    top: 45%;
+    z-index: 99;
+}
+
+.light-btn:hover {
+    background-color: #111;
+}
+
+.btn-prev {
+    left: 7%;
+}
+
+.btn-next {
+    right: 7%;
+}
+
+.btn-close {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    color: #fafafa;
+    background-color: #92001d;
+    border: solid 5px #ef4036;
+    padding: 10px 15px;
+    border-radius: 1px;
+    text-decoration: none;
+}
+
+.btn-close:hover {
+    background-color: #740404;
+}
+  .fa:hover {
+      opacity: 0.9;
+    }
+    .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+</style>
+</head>
+
+<body style="background-color: #DCD1CB;">
+  <div class="topnav">
+    <a href="schedule.html" class="active">Schedule Appointment </a>
+    <div id="myLinks">
+      <a href="https://test-for-capstone.elohall01.repl.co/sample-capstone/">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="estimate.html">Estimating Tools</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html"> Contact us</a>
+
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    function myFunctionFAQ(id) {
+      var x = document.getElementById(id);
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+  <body>
+    <div class="container-top">
+      <h1> Schedule an Appointment with us!</h1>
+      <!--<div class="info"> 
+    <div class="flex-parent-element">
+      <div class="flex-child-element magenta"> -->
+      <h5 style="font-size= 20px; padding: 10px;">We want to make sure you get the best experience here at Hall's. If
+        you are in need
+        of a delivery or a pick up time, please schedule that with us,using the button below. The page will allow you to
+        book a day and time of your choice. Please know that our schedules can change on the fly here at The Yard so if
+        we have to reschedule we will get back with you as soon as possible. If you have any other questions, feel free
+        to contact us! Have a wonderful day!</h5>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container" >
+      <form action=https://outlook.office365.com/owa/calendar/HallsBobcatService1@hallsbobcatservice.com/bookings/
+        target="_blank">
+        <button type="submit" "><b>Schedule Appointment</b></button>
+      </form>
+    </div>
+
+ <HR style="background-color: #766258; " NOSHADE SIZE = 6>
+    <h2 style="text-align: center;">Frequently Asked Questions</h2>
+
+
+    
+    <div class="w3-container" style="padding:10px; width: 50% text-align:center">
+      <button onclick="myFunctionFAQ('Demo1')" class="w3-btn w3-block w3-brown "
+        style="padding: 20px; background-color: #B9A397;">Where do I pick up my
+        materials?</button>
+      <div id="Demo1" class="w3-container w3-hide">
+        <h4>Come on down to The Rock Yard to pick up your ordered materials. Come in to the Office to let us know you're
+          here and we can get you loaded and on your way.</h4>
+      </div>
+    </div>
+
+    <div class="w3-container" style="padding:10px; width:25% text-align:center" >
+      <button onclick="myFunctionFAQ('Demo2')" class="w3-btn w3-block w3-brown " style="padding: 20px;">How do I get in touch with you?</button>
+      <div id="Demo2" class="w3-container w3-hide">
+        <h4>You can email or call the Office at *email or phone #*.</h4>
+      </div>
+
+    </div>
+
+    <div class="w3-container" style="padding:10px; width:50% text-align:justify ">
+      <button onclick="myFunctionFAQ('Demo3')" class="w3-btn w3-block w3-brown " style="padding: 20px;">Should I book an appointment for a job estimate?</button>
+      <div id="Demo3" class="w3-container w3-hide">
+        <h4>Depending on the extent of your job, you may need to book an appointment. If it is something listed on our
+          Services page, it won't be necessary since these are more of a routine job.</h4>
+      </div>
+    </div>
+
+    <div class="w3-container" style="padding:10px; width: 50% text-align:center" >
+       <button onclick="myFunctionFAQ('Demo4')" class="w3-btn w3-block w3-brown "style="padding: 20px;" >When should I book an appointment?</button>
+<div id="Demo4" class="w3-container w3-hide">
+  <h4>If there is something that you don't see that we do normally (see services page) or you need us on site to do something for you.</h4>
+</div>
+    </div>
+  
+
+  </body>
+
+</html>

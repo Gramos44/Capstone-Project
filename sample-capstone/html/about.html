@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<title>About Us </title>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float:center;
+      width: 50%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 25%;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #B9A397;
+      color: white;
+    }
+
+    .container {
+      background-color: whitesmoke;
+      padding: 0 16px;
+    }
+
+    .container::after,
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    #myFooter {
+      background-color: #38444d;
+    }
+
+    #footHeader {
+      font-size: 30px;
+      color: white;
+      text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #766258;
+    }
+
+    li {
+      float: left;
+      width: 14%;
+      /* approximate equal length of each category */
+      text-align: center;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: #A88C7D;
+    }
+
+
+    .mobile-container {
+      max-width: 480px;
+      margin: auto;
+      background-color: firebrick;
+      height: 500px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #766258;
+      position: relative;
+    }
+
+    .topnav #myLinks {
+      display: none;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      background: #433832;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav a:hover {
+      background-color: lightgray;
+      color: black;
+    }
+
+    .active {
+      background-color: #54463F;
+      color: white;
+    }
+
+    .fa:hover {
+      opacity: 0.9;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+  </style>
+</head>
+
+</head>
+
+<body style="background-color: #DCD1CB;">
+  <div class="topnav">
+    <a href="about.html" class="active">About Us </a>
+    <div id="myLinks">
+      <a href="https://test-for-capstone.elohall01.repl.co/sample-capstone/">Home</a>
+      <a href="estimate.html">Estimating Tools</a>
+      <a href="products.html">Our Products</a>
+      <a href="schedule.html">Schedule Appointment</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html"> Contact Us </a>
+
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+
+  <body style="background-color: #766258;">
+    <div class="about-section">
+      <h1 style="color: whitesmoke;">About Us</h1>
+      <p>At Hall's Bobcat Service, we take the time with our customers to go over every aspect of their project no
+        matter
+        how big or small. Projects can be bid over the phone in a few minutes or detailed out in hours of designing and
+        planning. We offer complete computer design layout before the project is ever started to insure the customer's
+        satisfaction.
+
+      <p>"We are driven to take care of our customers", Shane Hall...President
+
+
+        Hall's Bobcat Service is family-owned and operated right here in Miami County, Kansas. Since our company started
+        in 1998, we’ve treated every customer like they were a part of our family. Other companies may offer similar
+        services, but our services are the best, and come with a personal touch. </p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row" >
+      <div class="column">
+        <img src="../images/Travis.jpg" alt="Travis" style="width:50%" class="center">
+        <div class="container">
+          <h2 style="text-align:center">Travis Hall</h2>
+          <p class="title">Co-Founder </p>
+          <p> Travis is a hardworking and versatile individual who holds several job titles. As a co-owner, he plays a
+            key role in managing and growing the business. As a truck driver, he transports materials safely and
+            efficiently to various locations. In his field work excavation heavy equipment operator role, Travis
+            operates heavy machinery with precision and skill, ensuring projects are completed on time and to a high
+            standard. In addition to his professional roles, Travis is also the brother of Shane Hall. Overall, Travis
+            is a dedicated and dependable individual who excels in his various roles and takes pride in his work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="../images/Shane.jpg" alt="Shane" style="width:50%" class="center">
+        <div class="container">
+          
+          <h2 style="text-align:center">Shane Hall</h2>
+          <p class="title">Co-Founder</p>
+          <p>Shane is a versatile professional with a diverse skill set and range of responsibilities. He serves as a
+            co-owner of a company, contributing to strategic planning, financial management, and daily operations.
+            With expertise in architectural design, Shane creates practical and innovative designs for various types
+            of structures, ensuring that his company's projects are functional and aesthetically pleasing. As a
+            project manager, Shane oversees all aspects of a project, from adhering to budgets and meeting deadlines
+            to maintaining quality standards and communicating effectively with clients, contractors, and employees.
+            He is also experienced in field work and excavation, with the ability to operate heavy equipment and
+            navigate challenging environments. Outside of his professional endeavors, Shane is a devoted family
+            member, including being the brother of Travis Hall, highlighting his strong personal relationships and
+            family values.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="../images/Grandma.jpg" alt="Pam" style="width:50%" class=" center ">
+        <div class="container">
+          <h2 style="text-align:center">Pam Hall</h2>
+          <p class="title">Secretary </p>
+          <p> Pam is a multitasking individual who wears many hats in her life. As a secretary, she schedules
+            appointments, takes calls, and takes care of the office's paperwork efficiently. In her dispatch role, she
+            coordinates the transportation of materials, ensuring timely delivery to customers. As a heavy machinery
+            operator, Pam operates machinery with ease and precision, ensuring safety and productivity at The Yard.
+            She is also the proud mother of Shane and Travis supports them both in their business endeavors. Overall,
+            Pam is a versatile and dedicated individual who excels in all her roles.</p>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div  class="row justify-content-center">
+      <div class="column">
+        <img src="../images/Nick.jpg" alt="Nick" style="width:50%" class="center">
+        <div class="container">
+          <h2 style="text-align:center">Nick Hampson</h2>
+          <p class="title">Secretary</p>
+          <p>Nick is a dynamic individual who holds several diverse roles. As a secretary, he is responsible for
+            managing administrative tasks, organizing schedules, and maintaining records. In addition to this, Nick is
+            also an outdoor salesman who excels at building relationships with clients and promoting products and
+            services. As a truck driver, he has experience in safely transporting materials to various destinations.
+            Nick is also skilled in operating heavy machinery. Furthermore, Nick has been elected as the Mayor of
+            Osawatomie, where he uses his leadership skills and vision to improve the community's overall well-being.
+            His commitment to public service, coupled with his diverse professional experiences, highlights Nick's
+            versatility and ability to excel in multiple roles for the business. </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <footer id="myFooter"></footer>
+    <footer class="page-footer">
+      <div class="container">
+        <h2 style="padding-left: 20px; background-color: #DCD1CB;"> Other Links</h2>
+        <ul>
+          <li><a class="grey-text text-lighten-6" href="https://www.facebook.com/profile.php?id=100057816692899">Follow
+              us on Facebook</a> </li>
+          <li><a href="https://www.facebook.com/profile.php?id=100057816692899" class="fa fa-facebook"></a></li>
+
+
+        </ul>
+      </div>
+    </footer>
+  </body>
+
+</html>
