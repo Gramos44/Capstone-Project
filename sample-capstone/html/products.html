@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  
-<head>
-  <meta charset="UTF-8">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Reactive Shopping Cart</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* some basic styling for the shopping cart */
+      #cart {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 10px;
+        width: 300px;
+        height: auto;
+      }
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+     
+
+      <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Products</title>
   <style>
     body {
@@ -18,7 +38,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       background-color: whitesmoke;
-      width: 200px;
+      width: 325px;
       height: 300px;
       box-shadow: 0px 0px 10px #ccc;
       text-align: center;
@@ -122,11 +142,7 @@
       background-color: #766258;
     }
 
-    li {
-      float: left;
-      width: 14%;
-      text-align: center;
-    }
+    
 
     li a,
     .dropbtn {
@@ -150,19 +166,20 @@
       background: #3B5998;
       color: white;
     }
-  </style>
-</head>
+    </style>
+  </head>
+  <body>
 
-<body style="background-color:#DCD1CB ;">
+     <body style="background-color:#DCD1CB ;">
   <div class="topnav">
     <a href="products.html" class="active">Our Products</a>
     <div id="myLinks">
       <a href="https://capstone-project.guyramos.repl.co/">Home</a>
-      <a href="/sample-capstone/html/about.html">About Us</a>
-      <a href="/sample-capstone/html/estimate.html">Estimating Tools</a>
-      <a href="/sample-capstone/html/schedule.html">Schedule Appointment</a>
-      <a href="/sample-capstone/html/services.html">Services</a>
-      <a href="/sample-capstone/html/contact.html">Contact Us</a>
+      <a href="about.html">About Us</a>
+      <a href="estimate.html">Estimating Tools</a>
+      <a href="schedule.html">Schedule Appointment</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
     </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -198,126 +215,311 @@
 
   <h3> In stock items are sold by the cubic yard and range in weight from 2200- 3800 lbs. per yard. </h3> <br>
   <br>
-  <h4> Construction Aggregate</h4>
+       <form action="order.php" method = "POST">
+      
+      Name: <input type="text" id="name" name="name"><br>
+         <input type="submit">
+      </form>
+    <div id="cart">
+      <h2>Shopping Cart</h2>
+      <div id="cart-items">
+        <!-- the items added to the cart will go here -->
+      </div>
+      <p>Total: $<span id="cart-total"name= "cart-total">0.00 </span></p> 
+    </div>
+    
+    <div id="products">
+      <!-- list of products available for purchase -->
+      <h2>Products</h2>
+      
+    </div>
 
-
+       
+     <h4> Construction Aggregate</h4>
 
   <div class="products">
     <div class="product">
+      <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
 
       <img src="../product_images/1_2Chips.jpg" alt="Product 1" id="img1" onclick="enlargeImg()">
       <h3>1/2" Chips</h3>
       <p>$65.00/cu.yd.</p>
-      <button name="products" type="submit" value= "1/2 Chips">Add to Estimate</button>
+      <ul>
+        <li data-name="Chips" data-price="65"> 
+          <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+    
+        </div>
+      </div>
     </div>
-
+  </div>
+       
     <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
       <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Screenings</h3>
       <p>$53.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Screenings" data-price="53"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+        
+      </ul>
+     
     </div>
-
+       </div>
+    </div>
+      
     <div class="product">
-      <img src="../product_images/3_4Clean.jpg" alt="Product 3">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>3/4" Clean</h3>
       <p>$60.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="3/4 Clean" data-price="60"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/masonSand.jpg" alt="Product 4">
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Mason Sand</h3>
       <p>$90.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Mason Sand" data-price="90">
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/topsoil.jpg" alt="Product 5">
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Topsoil</h3>
       <p>$50.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Topsoil" data-price="50"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/roadRock.jpg" alt="Product 6">
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Road Rock</h3>
-      <p>$56.00/ cu.yd.</p>
-      <button>Add to Estimate</button>
+      <p>$56.00/cu. yd.</p>
+          <ul>
+        <li data-name="Road Rock" data-price="56"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/1.5-2Clean.jpg" alt="Product 7">
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>1.5"-2" Clean</h3>
       <p>$58.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="1.5 -2 Clean" data-price="58"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
+       
     <br>
     <h4> Decorative Rock</h4> <br>
 
     <div class="product">
-      <img src="../product_images/1.5Colorado.jpg" alt="Product 8">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>1.5" Colorado River Rock</h3>
       <p>$225.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="1.5 Colorado River Rock" data-price="225">
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-
-
-    <div class="product">
-      <img src="../product_images/1.5kansasriver.jpg" alt="Product 10">
-      <h3>1.5" Kansas River Rock </h3>
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
+      <h3>1.5"Kansas River Rock</h3>
       <p>$140.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="1.5 Kansas River Rock" data-price="140">
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/1.5calhoun.jpg" alt="Product 11">
-      <h3>1.5" Calhoun River Rock </h3>
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
+      <h3>1.5"Calhoun River Rock</h3>
       <p>$210.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="1.5 Calhoun River Rock" data-price="210">
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/34calhoun.jpg" alt="Product 12">
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>3/4" Calhoun River Rock</h3>
-      <p>$200.00/cu.yd.</p>
-      <button>Add to Estimate</button>
+      <p>$200.00/cu. yd.</p>
+          <ul>
+        <li data-name="3/4 Calhoun River Rock" data-price="200">
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
     </div>
-    
-    <div class="product">
-      <img src="../product_images/kansas_pea.jpg" alt="Product 9">
+       </div>
+    </div>
+
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Kansas Pea Gravel</h3>
       <p>$130.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Kansas Pea Gravel" data-price="130"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
     </div>
-    
+       </div>
+    </div>
+       
     <br>
     <h4> Double Ground Premium Mulch (Around 14 bags per cubic yard)</h4> <br>
 
     <div class="product">
-      <img src="../product_images/blm.jpg" alt="Product 13">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
       <h3>Black Mulch</h3>
       <p>$44.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Black Mulch" data-price="44"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/rm.jpg" alt="Product 14">
-      <h3>Red Mulch </h3>
-      <p>$54.00/cu.yd.</p>
-      <button>Add to Estimate</button>
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
+      <h3>Red Mulch</h3>
+      <p>$54.00/cu. yd.</p>
+          <ul>
+        <li data-name="Red Mulch" data-price="54"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
+    </div>
+       </div>
     </div>
 
-    <div class="product">
-      <img src="../product_images/bm.jpg" alt="Product 15">
-      <h3>Brown Mulch </h3>
+       <div class="product">
+       <div id="cart">
+        <div id="cart-items">
+        </div>
+        <div id="products">
+      <img src="../product_images/screenings.jpg" alt="Product 2">
+      <h3>Brown Mulch</h3>
       <p>$44.00/cu. yd.</p>
-      <button>Add to Estimate</button>
+          <ul>
+        <li data-name="Brown Mulch" data-price="44"> 
+           <input type="number" id="quantity" name="quantity" value="1" min="1" step ="1">
+          <button type="button" > Add to Cart</button></li>
+      </ul>
+     
     </div>
-
+       </div>
+    </div>
+       
     <br>
+       
     <h4> Cement Statuary and Fountains</h4> <br>
 
     <div class="product">
@@ -327,6 +529,31 @@
       <button>See Pricing Sheet</button>
     </div>
   </div>
+       <script>
+      // when a product is clicked, add it to the cart
+      $('#products li').on('click', function() {
+        const name = $(this).data('name');
+        const price = Number($(this).data('price'));
+        
+        // create the cart item element and add it to the cart
+        const cartItem = $('<div class="cart-item"><span class="item-name">' + name + '</span><span class="item-price">$' + price + '</span><button class="remove-item">x</button></div>');
+        $('#cart-items').append(cartItem);
+        
+        // update the cart total
+        const cartTotal = Number($('#cart-total').text());
+        $('#cart-total').text(cartTotal + price);
+      });
+      
+      // when a remove button is clicked, remove the item from the cart
+      $('#cart-items').on('click', '.remove-item', function() {
+        const price = Number($(this).siblings('.item-price').text().replace('$', ''));
+        
+        // remove the cart item element and update the cart total
+        $(this).parent('.cart-item').remove();
+        const cartTotal = Number($('#cart-total').text());
+        $('#cart-total').text(cartTotal - price);
+      });
+    </script>
 
   <footer id="myFooter"></footer>
   <footer class="page-footer" style="padding-top: 100px;">
@@ -340,7 +567,5 @@
       </ul>
     </div>
   </footer>
-</body>
-
+  </body>
 </html>
-

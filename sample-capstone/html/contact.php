@@ -9,7 +9,7 @@
     	  $i_phone = $_POST['phone'];
 	  $i_message = $_POST['message'];
 	  $i_reason = $_POST['reason'];
-			
+
 			
 	   
     $sql = "INSERT INTO contact "."(fname, lname, email, phone, reason, message) "."VALUES ".
