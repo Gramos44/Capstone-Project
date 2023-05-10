@@ -1,0 +1,17 @@
+{
+    "name": "Hall's Rock Yard",
+    "short_name": "Hall's",
+    "theme_color": "#766258",
+    "background_color": "#DCD1CB",
+    "display": "standalone",
+    "scope": "https://capstone-project.guyramos.repl.co/",
+    "start_url": "https://capstone-project.guyramos.repl.co/",
+    "description": "Rock Yard app",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/sample-capstone/images/Logo.png",
+            "sizes": "889x889"
+        }
+    ]
+}

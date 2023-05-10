@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="ninja-slider.css" rel="stylesheet" />
     <script src="ninja-slider.js" type="text/javascript"></script>
+  <link rel="manifest" href="/sample-capstone/json/manifest.json">
   <title>Hall's Rock Yard</title>
   <style>
     @font-face {
@@ -44,7 +45,7 @@ ul {
 
 li {
   float: left;
-  width:14%; /* approximate equal length of each category */
+  width:25%; /* approximate equal length of each category */
   text-align: center;
 }
 
@@ -193,7 +194,7 @@ p {
   text-align:left;
   padding-left:20px;
 }
-    @media screen and (max-width: 400px;) {
+    @media screen and (max-width: 600px;) {
       .h4 {
         display: inline-block;  <p><center> Monday - Friday: 8am-5pm <br> Saturday: 8am-12pm<br> Sunday: Closed <span style="margin-left: 25em;"> (913) 245-4089  </span> <span style="margin-left:20em;"> 607 Mulberry Ave. Osawatomie, KS </span></center> </p>
       }
@@ -203,17 +204,11 @@ p {
       padding-left:20px;
     }
 
-      .google-map {
-     padding-bottom: 50%;
-     position: relative;
-}
+     
 
-.google-map iframe {
-     height: 100%;
+iframe.google-map {
      width: 100%;
-     left: 0;
-     top: 0;
-     position: absolute;
+     
 }
 
     .fa {
@@ -239,13 +234,13 @@ p {
     background-color: #DCD1CB;
     padding:20px;
   }
-        @media screen and (min-width: 901px) {
+        @media screen and (min-width: 767px) {
           div.info{
             font_size: 35px;
             font-stretch: expanded;
           }
         }
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 766px) {
           div.info{
             font-size: 30px;\
             font-stretch: expanded;
@@ -391,6 +386,7 @@ p {
     <li><a href="sample-capstone/html/schedule.html"> Schedule Appointment</a></li>
     <li><a href="sample-capstone/html/services.html"> Services </a></li>
     <li><a href="sample-capstone/html/contact.html"> Contact Us </a></li>
+    <li><a href ="sample-capstone/html/invoice.html"> Invoice</a></li>
    
 
   </ul>
@@ -563,7 +559,7 @@ function showSlides(n) {
             <br>"Halls Bobcat service went above any beyond our expectations of putting in a garage pad site and being sure that the drainage issues we had were addressed. We are extremely pleased with the work that was done on our driveway, and everything that was done exactly what we talked about. I will definitely refer friends and family to you and use you again for any services that I need in the future." Cliff and Sandra Lucas<br
 </p>
   <div class = "google-maps"; text-align:center >
-    <p style="text-align: center;"> <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d400296.954459377!2d-95.064025!3d38.3878505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c753bb8bb09a95%3A0xb6b69ae9454c84a6!2sHalls%20Bobcat%20Service!5e0!3m2!1sen!2sus!4v1679426276307!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+    <p style="text-align: center;"> <iframe class= "google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d400296.954459377!2d-95.064025!3d38.3878505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c753bb8bb09a95%3A0xb6b69ae9454c84a6!2sHalls%20Bobcat%20Service!5e0!3m2!1sen!2sus!4v1679426276307!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
   </div>
         <h4 style ="font-size: 20px; text-align: center;" > We service the communities inside the square.</h4>
           </div>
@@ -580,6 +576,13 @@ function showSlides(n) {
       </div>
     
     </footer>
+   <script>
+ if (!navigator.serviceWorker.controller) {
+     navigator.serviceWorker.register("/sw.js").then(function(reg) {
+         console.log("Service worker has been registered for scope: " + reg.scope);
+     });
+ }
+</script>
 </body>
 
 </html>

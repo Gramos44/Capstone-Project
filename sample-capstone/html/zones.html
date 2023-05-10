@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Delivery Zones</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
      body{
     background-color: #DCD1CB;
@@ -98,23 +99,12 @@
       background-color: #3e8e41;
     }
 
-    #map {
-      height: 400px;
-      width: 100%;
-      margin-bottom: 20px;
+   
 
-    .google-map {
-     padding-bottom: 50%;
-     position: relative;
-}
-
-.google-map iframe {
-     height: 100%;
+    iframe.google-map {
      width: 100%;
-     left: 0;
-     top: 0;
-     position: absolute;
 }
+
     }
     #myFooter {
   background-color: #38444d;
@@ -306,7 +296,7 @@ p {
   <div class="topnav">
   <a href="../html/zones.html" class="active">Delivery Zones</a>
   <div id="myLinks">
-    <a href="https://test-for-capstone.elohall01.repl.co/sample-capstone/">Home</a>
+    <a href="https://capstone-project.guyramos.repl.co/">Home</a>
     <a href="about.html">About Us</a>
     <a href="estimate.html">Estimating Tools</a>
     <a href="products.html">Our Products</a>
@@ -351,43 +341,8 @@ function myFunction() {
   <h3 style="padding-bottom: 20px;"></h3>
     
   <div class ="google-map" style="padding-bottom:50px;"; text-align: center >
-  <p style="text-align: center;"><iframe src="https://www.google.com/maps/d/embed?mid=1YBXZz6ccr0eZkplI0q6-Gdt5-UjTZFE&ehbc=2E312F" width="640" height="480"></iframe></p>
+  <p style="text-align: center;"><iframe class ="google-map" src="https://www.google.com/maps/d/embed?mid=1YBXZz6ccr0eZkplI0q6-Gdt5-UjTZFE&ehbc=2E312F" width="640" height="480"></iframe></p>
   </div>
-
-    
-
-  <!--<script>
-    var map;
-    function initMap() {
-      var myLatLng = {lat: 94.5606, lng: 38.2324}; // Set default location
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: myLatLng,
-        zoom: 10
-      });
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Click to select your location'
-      });
-      google.maps.event.addListener(map, 'click', function (event) {
-        marker.setPosition(event.latLng);
-        document.getElementById('lat').value = event.latLng.lat();
-        document.getElementById('lng').value = event.latLng.lng();
-      });
-    }
-  </script>
-</head>
-
-<body onload="initMap()">
-  <form action="estimate.php" method="post">
-    <label for="location">Select your location:</label>
-    <div id="map"></div>
-    <input type="hidden" id="lat" name="lat">
-    <input type="hidden" id="lng" name="lng">
-    <input type="submit" value="Get Estimate">
-  </form> -->
-
-
   
   <footer id = "myFooter"></footer>
     <footer class="page-footer">
